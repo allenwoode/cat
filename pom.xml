@@ -59,6 +59,7 @@
         <module>cat-common-core</module>
         <module>cat-common-mybatis</module>
         <module>cat-auth</module>
+        <module>cat-codegen</module>
     </modules>
 
     <dependencyManagement>
