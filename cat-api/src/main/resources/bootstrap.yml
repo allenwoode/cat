@@ -1,0 +1,8 @@
+server:
+  port: 8858
+
+spring:
+  application:
+    name: @artifactId@
+  profiles:
+    active: @profiles.active@

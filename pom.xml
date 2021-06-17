@@ -4,11 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.eeyoo</groupId>
     <artifactId>cat</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <packaging>pom</packaging>
+    <name>cat</name>
+    <description>cat</description>
 
     <properties>
         <spring-boot.version>2.4.4</spring-boot.version>
@@ -21,6 +23,8 @@
         <hutool.version>5.6.1</hutool.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <jasypt.version>2.1.0</jasypt.version>
+        <git.commit.plugin>2.2.5</git.commit.plugin>
+        <spring.checkstyle.plugin>0.0.23</spring.checkstyle.plugin>
     </properties>
 
     <dependencies>
@@ -58,8 +62,6 @@
     <modules>
         <module>cat-common-core</module>
         <module>cat-common-mybatis</module>
-        <module>cat-auth</module>
-        <module>cat-codegen</module>
     </modules>
 
     <dependencyManagement>
@@ -99,6 +101,20 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <plugins>
+            <!--打包jar 与git commit 关联插件-->
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>${git.commit.plugin}</version>
+            </plugin>
+            <!--代码格式插件，默认使用spring 规则-->
+            <plugin>
+                <groupId>io.spring.javaformat</groupId>
+                <artifactId>spring-javaformat-maven-plugin</artifactId>
+                <version>${spring.checkstyle.plugin}</version>
+            </plugin>
+        </plugins>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -122,5 +138,19 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <!-- 环境标识，需要与配置文件的名称相对应 -->
+                <profiles.active>dev</profiles.active>
+            </properties>
+            <activation>
+                <!-- 默认环境 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 
 </project>

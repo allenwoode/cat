@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @GetMapping("/")
-    public R<?> index() {
-        log.info(">======================= /hello =========================<");
-        return R.ok("成功");
-    }
+	@GetMapping("/")
+	public R<?> index() {
+		log.info(">======================= /hello =========================<");
+		return R.ok("成功");
+	}
 
 }
