@@ -13,6 +13,7 @@
     <description>cat</description>
 
     <properties>
+        <cat.common.version>1.0</cat.common.version>
         <spring-boot.version>2.4.4</spring-boot.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
         <spring-cloud-alibaba.version>2020.0.RC1</spring-cloud-alibaba.version>
@@ -90,6 +91,16 @@
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.eeyoo</groupId>
+                <artifactId>cat-common-core</artifactId>
+                <version>${cat.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.eeyoo</groupId>
+                <artifactId>cat-common-mybatis</artifactId>
+                <version>${cat.common.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
