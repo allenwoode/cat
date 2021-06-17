@@ -25,7 +25,12 @@
         <jasypt.version>2.1.0</jasypt.version>
         <git.commit.plugin>2.2.5</git.commit.plugin>
         <spring.checkstyle.plugin>0.0.23</spring.checkstyle.plugin>
+        <swagger.core.version>1.5.24</swagger.core.version>
     </properties>
+
+    <modules>
+        <module>cat-common</module>
+    </modules>
 
     <dependencies>
         <!--bootstrap 启动器-->
@@ -59,10 +64,6 @@
         </dependency>
     </dependencies>
 
-    <modules>
-        <module>cat-common-core</module>
-        <module>cat-common-mybatis</module>
-    </modules>
 
     <dependencyManagement>
         <dependencies>

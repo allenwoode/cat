@@ -7,7 +7,6 @@
  */
 package com.eeyoo.cat.api.controller;
 
-
 import com.example.cat.common.core.util.R;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/home")
 public class HomeController {
 
-    @GetMapping
-    public R home() {
-        return R.ok(null, "成功");
-    }
+	@GetMapping
+	public R home() {
+		return R.ok(null, "成功");
+	}
+
 }
